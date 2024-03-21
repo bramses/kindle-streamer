@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "kindle-streamer"
+version = "0.1.0"
+description = ""
+authors = ["Bram Adams <3282661+bramses@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "kindle_streamer"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pytesseract = "^0.3.10"
+openai = "^1.14.2"
+python-dotenv = "^1.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
