@@ -13,11 +13,25 @@ app = Flask(__name__)
 def home():
     return render_template_string("""
     <html>
+        <head>
+            <style>
+                #art {
+                    transition: opacity 1s ease-in-out;
+                }
+            </style>
+        </head>
         <body>
             <img id="art" src="/art" />
             <script>
                 setInterval(function(){
-                    document.getElementById('art').src = "/art?" + new Date().getTime();
+                    var art = document.getElementById('art');
+                    art.style.opacity = 0;
+                    setTimeout(function() {
+                        art.src = "/art?" + new Date().getTime();
+                        art.onload = function() {
+                            art.style.opacity = 1;
+                        }
+                    }, 1000);
                 }, 3000);
             </script>
         </body>
