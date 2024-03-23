@@ -16,7 +16,7 @@ while True:
     output = subprocess.run(['./windowlist'], capture_output=True, text=True).stdout
 
     # Search for the Kindle window ID
-    match = re.search(r'Kindle:Window:(\d+)', output)
+    match = re.search(r'Kindle:Window:(\d+)', output) or re.search(r'Kindle:Kindle:(\d+)', output)
     if match:
         kindle_id = match.group(1)
         print(f"Kindle Window ID: {kindle_id}")
@@ -30,6 +30,8 @@ while True:
         print(f"Screenshot saved as {filename}")
     else:
         print("Kindle window not found.")
+        print(output)
+
 
     
     # Perform OCR on the screenshot
