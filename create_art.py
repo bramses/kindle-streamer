@@ -14,41 +14,47 @@ CONTEXT_WINDOW = 4000
 def create_art_prompt(data: str):
     prompt = '''
 1.what part from the provided text would make for the **best** context for an art prompt? 
-2. come up with art prompt from #1. the art prompt should include hyper specific details (be meticulous) and be in the style of a random art style from history that fits the vibe best from the list: [
-    "Pre-Historic",
-    "Ancient Egyptian",
-    "Mesopotamian",
-    "Minoan and Mycenaean",
-    "Ancient Greek and Roman",
-    "Byzantine",
-    "Islamic Art",
-    "Medieval",
-    "Renaissance",
-    "Mannerism",
-    "Baroque",
-    "Rococo",
-    "Neoclassicism",
-    "Romanticism",
-    "Realism",
-    "Impressionism",
-    "Post-Impressionism",
-    "Symbolism",
-    "Art Nouveau",
-    "Expressionism",
-    "Cubism",
-    "Futurism",
-    "Dada",
-    "Surrealism",
-    "Abstract Expressionism",
-    "Pop Art",
-    "Minimalism",
-    "Conceptual Art",
-    "Performance Art",
-    "Installation Art",
-    "Digital Art",
-    "Street Art",
-    "Contemporary Art"
-]. Leverage the rule of thirds and golden ratio in your prompt. And make sure the eye is drawn to the focal point of the art.
+2. come up with art prompt from #1. the art prompt should include hyper specific details that can be illustrated (be meticulous). be in the style of a random art style from history that fits the vibe best from the list. Be creative and surprising!!! 
+
+DO NOT USE SPACE GALAXIES OR ANY REFERENCE TO OUTER SPACE OR AWE OR ANY COLOR VOMIT ON THE CANVAS. KEEP THE PIECE COHESIVE AND CLEAN AND LITERATE.
+
+Styles : ["Abstract Expressionism",
+      "Art Deco",
+      "Art Nouveau",
+      "Avant-garde",
+      "Baroque",
+      "Bauhaus",
+      "Classicism",
+      "CoBrA",
+      "Color Field Painting",
+      "Conceptual Art",
+      "Constructivism",
+      "Cubism",
+      "Dada / Dadaism",
+      "Digital Art",
+      "Expressionism",
+      "Fauvism",
+      "Futurism",
+      "Harlem Renaissance",
+      "Impressionism",
+      "Installation Art",
+      "Land Art",
+      "Minimalism",
+      "Neo-Impressionism",
+      "Neoclassicism",
+      "Neon Art",
+      "Op Art",
+      "Performance Art",
+      "Pop Art",
+      "Post-Impressionism",
+      "Precisionism",
+      "Rococo",
+      "Street Art",
+      "Surrealism",
+      "Suprematism",
+      "Symbolism",
+      "Zero Group"
+    ].
 '''
     data = f"Raw Text: {data}\nArt Prompt:\n"
     completion = client.chat.completions.create(
